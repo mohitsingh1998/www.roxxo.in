@@ -3,38 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electronic Store</title>
+    <title>Premium DJ & Sound Electronics</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
-        header { background-color: #1a252f; color: #fff; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        header .logo { font-size: 24px; font-weight: bold; color: #3498db; }
+        body { background-color: #0b0f19; color: #f8fafc; line-height: 1.6; }
+        
+        /* DJ Dynamic Theme Colors (Dark Blue + Neon Cyan & Purple) */
+        header { background-color: #111827; color: #fff; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0, 229, 255, 0.1); border-bottom: 1px solid #1f2937; }
+        header .logo { font-size: 24px; font-weight: bold; color: #00e5ff; text-transform: uppercase; letter-spacing: 1px; }
         nav ul { list-style: none; display: flex; }
         nav ul li { margin-left: 20px; }
-        nav ul li a { color: #fff; text-decoration: none; font-size: 16px; transition: color 0.3s; }
-        nav ul li a:hover { color: #3498db; }
-        .hero { background: linear-gradient(rgba(26, 37, 47, 0.8), rgba(26, 37, 47, 0.8)), url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover; height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; }
-        .hero h1 { font-size: 36px; margin-bottom: 10px; }
-        .hero p { font-size: 18px; margin-bottom: 20px; color: #bdc3c7; }
+        nav ul li a { color: #9ca3af; text-decoration: none; font-size: 16px; transition: color 0.3s; }
+        nav ul li a:hover { color: #00e5ff; }
+        
+        /* Hero Section with DJ Concert Background */
+        .hero { background: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.85)), url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover; height: 45vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; }
+        .hero h1 { font-size: 38px; margin-bottom: 10px; color: #00e5ff; text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); }
+        .hero p { font-size: 18px; margin-bottom: 20px; color: #9ca3af; }
+        
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .section-title { text-align: center; margin-bottom: 30px; font-size: 28px; position: relative; padding-bottom: 10px; }
-        .section-title::after { content: ''; width: 50px; height: 3px; background-color: #3498db; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .product-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.05); transition: transform 0.3s; text-align: center; padding: 20px; }
-        .product-card:hover { transform: translateY(-5px); }
-        .product-icon { font-size: 50px; color: #3498db; margin-bottom: 15px; }
-        .product-card h3 { margin-bottom: 10px; font-size: 20px; }
-        .product-card p { color: #7f8c8d; font-size: 14px; margin-bottom: 15px; }
-        .btn-whatsapp { display: inline-block; background-color: #25D366; color: #fff; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
-        .btn-whatsapp:hover { background-color: #128C7E; }
-        .contact-section { background-color: #fff; padding: 40px 20px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); margin-top: 40px; text-align: center; }
-        footer { background-color: #1a252f; color: #bdc3c7; text-align: center; padding: 20px; margin-top: 40px; font-size: 14px; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 28px; position: relative; padding-bottom: 10px; color: #f8fafc; text-transform: uppercase; }
+        .section-title::after { content: ''; width: 60px; height: 3px; background-color: #00e5ff; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); box-shadow: 0 0 8px #00e5ff; }
+        
+        /* Products Grid */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: #111827; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5); transition: transform 0.3s, box-shadow 0.3s; text-align: center; display: flex; flex-direction: column; border: 1px solid #1f2937; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px rgba(0, 229, 255, 0.3); border-color: #00e5ff; }
+        
+        /* Product Images */
+        .product-img { width: 100%; height: 220px; object-fit: cover; background-color: #1f2937; }
+        
+        .product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card h3 { margin-bottom: 10px; font-size: 22px; color: #f3f4f6; }
+        .product-card p { color: #9ca3af; font-size: 14px; margin-bottom: 20px; }
+        
+        /* WhatsApp Green Button */
+        .btn-whatsapp { display: block; background-color: #22c55e; color: #fff; padding: 12px 15px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; text-align: center; font-size: 15px; }
+        .btn-whatsapp:hover { background-color: #16a34a; box-shadow: 0 0 10px rgba(34, 197, 94, 0.4); }
+        
+        /* Contact Block */
+        .contact-section { background-color: #111827; padding: 40px 20px; border-radius: 12px; border: 1px solid #1f2937; text-align: center; margin-top: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .contact-info { margin-top: 20px; font-size: 18px; color: #d1d5db; }
+        .contact-info p { margin: 12px 0; }
+        
+        footer { background-color: #0b0f19; color: #4b5563; text-align: center; padding: 20px; margin-top: 40px; font-size: 14px; border-top: 1px solid #1f2937; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Electronic Store</div>
+        <div class="logo">DJ Sound & Lights</div>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -45,39 +63,52 @@
     </header>
 
     <section class="hero">
-        <h1>Best Electronic Products & Services</h1>
-        <p>Kam daam mein sabse behtareen electronics aur deals.</p>
+        <h1>Professional DJ Speakers & Stage Lights</h1>
+        <p>High-quality sound systems, amplifiers, aur event lighting sabse sahi daam par.</p>
     </section>
 
     <div class="container" id="products">
         <h2 class="section-title">Hamare Products</h2>
         <div class="products-grid">
+            
+            <!-- Product 1: DJ Speakers -->
             <div class="product-card">
-                <div class="product-icon">📱</div>
-                <h3>Smartphones & Accessories</h3>
-                <p>Latest mobiles, premium chargers, aur trendy back covers.</p>
-                <a href="https://wa.me/91XXXXXXXXXX?text=Mujhe%20Mobile%20Accessories%20ke%20baare%20mein%20jaan-na%20hai" target="_blank" class="btn-whatsapp">WhatsApp par Order Karein</a>
+                <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?ixlib=rb-4.2.1&auto=format&fit=crop&w=500&q=80" alt="DJ Speakers" class="product-img">
+                <div class="product-info">
+                    <h3>Heavy Bass DJ Speakers</h3>
+                    <p>Professional dual bass speakers, top cabinets, line arrays, aur high-power stage monitors sound setups ke liye.</p>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Mujhe%20DJ%20Speakers%20ke%20baare%20mein%20jaan-na%20hai" target="_blank" class="btn-whatsapp">WhatsApp par Price Poochein</a>
+                </div>
             </div>
+
+            <!-- Product 2: DJ Machines / Amplifiers -->
             <div class="product-card">
-                <div class="product-icon">💻</div>
-                <h3>Laptops & Computers</h3>
-                <p>Naye aur refurbished laptops aur computer parts sahi daam par.</p>
-                <a href="https://wa.me/91XXXXXXXXXX?text=Mujhe%20Laptops%20ke%20baare%20mein%20jaan-na%20hai" target="_blank" class="btn-whatsapp">WhatsApp par Order Karein</a>
+                <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?ixlib=rb-4.2.1&auto=format&fit=crop&w=500&q=80" alt="DJ Machines" class="product-img">
+                <div class="product-info">
+                    <h3>Amplifiers & Sound Machines</h3>
+                    <p>Heavy duty power amplifiers, DJ mixers, audio crossovers, aur professional stabilization units cords ke sath.</p>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Mujhe%20DJ%20Machines/Amplifiers%20ke%20baare%20mein%20jaan-na%20hai" target="_blank" class="btn-whatsapp">WhatsApp par Detail Lein</a>
+                </div>
             </div>
+
+            <!-- Product 3: Stage Lights -->
             <div class="product-card">
-                <div class="product-icon">🔌</div>
-                <h3>Home Appliances</h3>
-                <p>Fans, LED Bulbs, extension boards, aur baaki zaroori items.</p>
-                <a href="https://wa.me/91XXXXXXXXXX?text=Mujhe%20Home%20Appliances%20ke%20baare%20mein%20jaan-na%20hai" target="_blank" class="btn-whatsapp">WhatsApp par Order Karein</a>
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.2.1&auto=format&fit=crop&w=500&q=80" alt="DJ Lights" class="product-img">
+                <div class="product-info">
+                    <h3>All Types of Stage Lights</h3>
+                    <p>Sharpy lights, LED PAR lights, strobe lights, smoke/fog machines, aur professional laser lighting control boards.</p>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Mujhe%20Stage%20Lights%20ke%20baare%20mein%20jaan-na%20hai" target="_blank" class="btn-whatsapp">WhatsApp par Variety Dekhein</a>
+                </div>
             </div>
+
         </div>
     </div>
 
     <div class="container" id="contact">
         <div class="contact-section">
             <h2 class="section-title">Humse Sampark Karein</h2>
-            <p>Koi bhi product khareedne ya enquiry ke liye niche diye gaye details par contact karein.</p>
-            <div style="margin-top: 20px; font-size: 18px;">
+            <p>DJ setup khareedne, customize karne, ya rates jaanne ke liye niche contact karein.</p>
+            <div class="contact-info">
                 <p><strong>📍 Address:</strong> Uttar Pradesh, India</p>
                 <p><strong>📞 Phone:</strong> +91 XXXXXXXXXX</p>
             </div>
@@ -85,7 +116,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Electronic Store. All Rights Reserved.</p>
+        <p>&copy; 2026 DJ Sound & Lights. All Rights Reserved.</p>
     </footer>
 
 </body>
